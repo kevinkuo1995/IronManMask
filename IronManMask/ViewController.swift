@@ -73,9 +73,16 @@ class ViewController: UIViewController {
         let rvalue = Float.random(in: 0...1)
         let gvalue = Float.random(in: 0...1)
         let bvalue = Float.random(in: 0...1)
-        redSlider.value = rvalue
-        greenSlider.value = gvalue
-        blueSlider.value = bvalue
+        if redSliderSwitch.isOn == true{
+            redSlider.value = rvalue
+        }
+        if greenSliderSwitch.isOn == true{
+            greenSlider.value = gvalue
+        }
+        if blueSliderSwitch.isOn == true{
+            blueSlider.value = bvalue
+        }
+        
         imageView.backgroundColor = UIColor(red: CGFloat(rvalue), green: CGFloat(gvalue), blue: CGFloat(bvalue), alpha: CGFloat(alphaSlider.value))
         if let gradientLayer = imageView.layer.sublayers?[0] as? CAGradientLayer{
             gradientLayer.colors = [UIColor.black.cgColor , UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value)).cgColor,UIColor.black.cgColor]
