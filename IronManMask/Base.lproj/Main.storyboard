@@ -54,7 +54,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="blendSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="D1R-GB-bZk"/>
+                                    <action selector="gradientSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="D1R-GB-bZk"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="175" translatesAutoresizingMaskIntoConstraints="NO" id="ud2-5o-E5W">
@@ -93,7 +93,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <connections>
-                                    <action selector="blendChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hO2-hf-xr7"/>
+                                    <action selector="gradientChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hO2-hf-xr7"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NH-Fl-vfl">
@@ -155,6 +155,20 @@
                                     <action selector="random:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I78-D7-ywF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8Z-ku-oic">
+                                <rect key="frame" x="49" y="493" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CornerRadius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNX-W5-BmW">
+                                <rect key="frame" x="13" y="567" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -162,14 +176,14 @@
                     <connections>
                         <outlet property="alphaLabel" destination="t1X-6C-jbw" id="eiD-hx-s0v"/>
                         <outlet property="alphaSlider" destination="YX4-6P-wXI" id="f3g-61-yFF"/>
-                        <outlet property="blendsSWitch" destination="aDo-JA-W1a" id="7PR-qu-ZPc"/>
-                        <outlet property="blendsSlider" destination="BM2-mP-VhM" id="5iY-f8-W7H"/>
                         <outlet property="blueLabel" destination="zmJ-Hg-mg9" id="kOX-KY-2zd"/>
                         <outlet property="blueSlider" destination="9es-nN-mUr" id="fCi-n4-jdo"/>
                         <outlet property="blueSliderSwitch" destination="dUI-OU-Edl" id="pMd-ei-Kb5"/>
                         <outlet property="colorView" destination="mb9-ll-XWE" id="KRG-J9-K8K"/>
                         <outlet property="cornerRadiusLabel" destination="NyN-9H-Ryi" id="lJd-mS-2tM"/>
                         <outlet property="cornerRadiusSlider" destination="ud2-5o-E5W" id="IiD-1d-bgG"/>
+                        <outlet property="gradientSlider" destination="BM2-mP-VhM" id="5iY-f8-W7H"/>
+                        <outlet property="gradientSwitch" destination="aDo-JA-W1a" id="7PR-qu-ZPc"/>
                         <outlet property="greenLabel" destination="z0D-Rh-6xB" id="EMR-r7-YUb"/>
                         <outlet property="greenSlider" destination="xmQ-4s-3Qm" id="OkS-iD-tjT"/>
                         <outlet property="greenSliderSwitch" destination="s8V-a3-C4I" id="1Qx-jA-5lM"/>

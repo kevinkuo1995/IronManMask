@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaSlider: UISlider!
-    @IBOutlet weak var blendsSlider: UISlider!
+    @IBOutlet weak var gradientSlider: UISlider!
     @IBOutlet weak var cornerRadiusSlider: UISlider!
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var redSliderSwitch: UISwitch!
     @IBOutlet weak var greenSliderSwitch: UISwitch!
     @IBOutlet weak var blueSliderSwitch: UISwitch!
-    @IBOutlet weak var blendsSWitch: UISwitch!
+    @IBOutlet weak var gradientSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         imageView.layer.cornerRadius = CGFloat(sender.value)
         colorView.layer.cornerRadius = CGFloat(sender.value)
         originalView.layer.cornerRadius = CGFloat(sender.value)
-        cornerRadiusLabel.text = String(cornerRadiusSlider.value)
+        cornerRadiusLabel.text = String(Int(cornerRadiusSlider.value))
         if let gradientLayer = imageView.layer.sublayers?[0] as? CAGradientLayer {
             gradientLayer.cornerRadius = CGFloat(sender.value)
         }
@@ -84,8 +84,8 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func blendChanged(_ sender: UISwitch) {
-        if blendsSWitch.isOn == true,imageView.layer.sublayers == nil {
+    @IBAction func gradientChanged(_ sender: UISwitch) {
+        if gradientSwitch.isOn == true,imageView.layer.sublayers == nil {
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = imageView.bounds
             gradientLayer.colors = [UIColor.black.cgColor , UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value)).cgColor,UIColor.black.cgColor]
@@ -94,9 +94,9 @@ class ViewController: UIViewController {
             gradientLayer.cornerRadius = CGFloat(cornerRadiusSlider.value)
             gradientLayer.locations = [0, 0.5, 1]
             imageView.layer.addSublayer(gradientLayer)
-            blendsSlider.isEnabled = blendsSWitch.isOn
+            gradientSlider.isEnabled = gradientSwitch.isOn
         }else{
-            blendsSlider.isEnabled = blendsSWitch.isOn
+            gradientSlider.isEnabled = gradientSwitch.isOn
             imageView.layer.sublayers = nil
         }
         
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func blendSlider(_ sender: UISlider) {
+    @IBAction func gradientSlider(_ sender: UISlider) {
             if let gradientLayer = imageView.layer.sublayers?[0] as? CAGradientLayer {
                 gradientLayer.locations = [0, NSNumber(value: sender.value),1]
             }
